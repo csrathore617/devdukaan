@@ -1,0 +1,19 @@
+<svg width="420" height="420" viewBox="0 0 420 420" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="stack-bg" x1="80" y1="80" x2="320" y2="320" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#0F172A"/>
+      <stop offset="1" stop-color="#111827"/>
+    </linearGradient>
+    <linearGradient id="stack-d" x1="110" y1="84" x2="250" y2="258" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#7DD3FC"/>
+      <stop offset="0.45" stop-color="#3B82F6"/>
+      <stop offset="1" stop-color="#2563EB"/>
+    </linearGradient>
+  </defs>
+  <rect x="70" y="40" width="280" height="280" rx="72" fill="url(#stack-bg)"/>
+  <path d="M114 82H176C220.6 82 254 111.2 254 162C254 212.8 220.6 242 176 242H114V82ZM168 124V200H177C200.6 200 218 186.3 218 162C218 137.7 200.6 124 177 124H168Z" fill="url(#stack-d)"/>
+  <path d="M220 118L250 162L220 206" stroke="#BAE6FD" stroke-width="16" stroke-linecap="round" stroke-linejoin="round"/>
+  <path d="M264 118L294 162L264 206" stroke="#67E8F9" stroke-width="16" stroke-linecap="round" stroke-linejoin="round" opacity="0.9"/>
+  <text x="210" y="346" text-anchor="middle" fill="#0F172A" font-family="Segoe UI, Arial, sans-serif" font-size="52" font-weight="700" letter-spacing="-1">DevDukaan</text>
+  <text x="210" y="382" text-anchor="middle" fill="#475569" font-family="Segoe UI, Arial, sans-serif" font-size="22" font-weight="600" letter-spacing="2.5">.in</text>
+</svg>

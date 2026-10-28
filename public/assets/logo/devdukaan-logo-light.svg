@@ -1,0 +1,20 @@
+<svg width="980" height="260" viewBox="0 0 980 260" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <rect width="980" height="260" fill="#F8FAFC"/>
+  <defs>
+    <linearGradient id="light-bg" x1="24" y1="24" x2="236" y2="236" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#0F172A"/>
+      <stop offset="1" stop-color="#111827"/>
+    </linearGradient>
+    <linearGradient id="light-d" x1="90" y1="64" x2="220" y2="196" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#7DD3FC"/>
+      <stop offset="0.45" stop-color="#3B82F6"/>
+      <stop offset="1" stop-color="#2563EB"/>
+    </linearGradient>
+  </defs>
+  <rect x="24" y="24" width="212" height="212" rx="54" fill="url(#light-bg)"/>
+  <path d="M92 64H148C188.6 64 220 92 220 130C220 168 188.6 196 148 196H92V64ZM138 98V162H147C169.7 162 186 149 186 130C186 111 169.7 98 147 98H138Z" fill="url(#light-d)"/>
+  <path d="M186 96L212 130L186 164" stroke="#BAE6FD" stroke-width="13" stroke-linecap="round" stroke-linejoin="round"/>
+  <path d="M221 96L247 130L221 164" stroke="#67E8F9" stroke-width="13" stroke-linecap="round" stroke-linejoin="round" opacity="0.9"/>
+  <text x="310" y="146" fill="#0F172A" font-family="Segoe UI, Arial, sans-serif" font-size="82" font-weight="700" letter-spacing="-2">DevDukaan</text>
+  <text x="314" y="188" fill="#475569" font-family="Segoe UI, Arial, sans-serif" font-size="28" font-weight="600" letter-spacing="2.5">.in</text>
+</svg>
