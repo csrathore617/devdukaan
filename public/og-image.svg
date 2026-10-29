@@ -1,0 +1,20 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="630" viewBox="0 0 1200 630" role="img" aria-labelledby="title description">
+  <title id="title">DevDukaan.in</title>
+  <desc id="description">Websites, custom web applications and mobile apps for businesses.</desc>
+  <defs>
+    <linearGradient id="accent" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#2877f5"/>
+      <stop offset="1" stop-color="#31c7f4"/>
+    </linearGradient>
+    <radialGradient id="glow">
+      <stop offset="0" stop-color="#173d76"/>
+      <stop offset="1" stop-color="#09152f"/>
+    </radialGradient>
+  </defs>
+  <rect width="1200" height="630" fill="url(#glow)"/>
+  <rect x="76" y="74" width="1048" height="482" rx="32" fill="#0d1d3b" stroke="#28436c" stroke-width="2"/>
+  <rect x="124" y="146" width="8" height="340" rx="4" fill="url(#accent)"/>
+  <text x="170" y="268" fill="#f5f8ff" font-family="Arial, Helvetica, sans-serif" font-size="82" font-weight="700">DevDukaan.in</text>
+  <text x="174" y="337" fill="#8edcf0" font-family="Arial, Helvetica, sans-serif" font-size="30" font-weight="600">Websites · Web Applications · Mobile Apps</text>
+  <text x="174" y="405" fill="#a7b6cd" font-family="Arial, Helvetica, sans-serif" font-size="25">Digital solutions for businesses</text>
+</svg>

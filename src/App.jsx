@@ -17,9 +17,39 @@ import FloatingWhatsAppButton from './components/FloatingWhatsAppButton';
 import PrivacyPolicy from './pages/PrivacyPolicy';
 import Terms from './pages/Terms';
 
+const PAGE_METADATA = {
+  '/': {
+    title: 'DevDukaan.in | Website & Mobile App Development',
+    description: 'DevDukaan.in develops modern websites, custom web applications and Android & iOS mobile apps for businesses.',
+  },
+  '/privacy-policy': {
+    title: 'Privacy Policy | DevDukaan.in',
+    description: 'Read how DevDukaan.in collects, uses and protects information submitted through its website enquiry form.',
+  },
+  '/terms': {
+    title: 'Terms & Conditions | DevDukaan.in',
+    description: 'Review the terms for DevDukaan.in website, web application, mobile application and software development services.',
+  },
+};
+
 export default function App() {
   const [modalOpen, setModalOpen] = useState(false);
-  const path = window.location.pathname;
+  const path = window.location.pathname.replace(/\/+$/, '') || '/';
+  const metadataPath = PAGE_METADATA[path] ? path : '/';
+  const pageMetadata = PAGE_METADATA[metadataPath];
+
+  useEffect(() => {
+    const canonicalUrl = `https://www.devdukaan.in${metadataPath === '/' ? '/' : metadataPath}`;
+    document.title = pageMetadata.title;
+    document.querySelector('meta[name="description"]')?.setAttribute('content', pageMetadata.description);
+    document.querySelector('meta[name="robots"]')?.setAttribute('content', 'index, follow');
+    document.querySelector('link[rel="canonical"]')?.setAttribute('href', canonicalUrl);
+    document.querySelector('meta[property="og:title"]')?.setAttribute('content', pageMetadata.title);
+    document.querySelector('meta[property="og:description"]')?.setAttribute('content', pageMetadata.description);
+    document.querySelector('meta[property="og:url"]')?.setAttribute('content', canonicalUrl);
+    document.querySelector('meta[name="twitter:title"]')?.setAttribute('content', pageMetadata.title);
+    document.querySelector('meta[name="twitter:description"]')?.setAttribute('content', pageMetadata.description);
+  }, [pageMetadata, metadataPath]);
 
   useEffect(() => {
     if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) return undefined;
