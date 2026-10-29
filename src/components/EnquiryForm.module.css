@@ -1,0 +1,46 @@
+.form { display: flex; flex-direction: column; gap: 14px; }
+.field { display: flex; flex-direction: column; gap: 7px; }
+.field label { font-size: 13px; font-weight: 650; color: #dce7f8; }
+.field label span { color: #55c5ff; }
+.field input, .field textarea {
+  min-width: 0;
+  background: rgba(255,255,255,0.055);
+  border: 1px solid rgba(148,163,184,0.28);
+  border-radius: 10px;
+  padding: 12px 14px;
+  color: #f1f5f9;
+  font-size: 14px;
+  outline: none;
+  transition: border-color 0.2s, box-shadow 0.2s, background 0.2s;
+  font-family: inherit;
+  width: 100%;
+}
+.field input::placeholder, .field textarea::placeholder { color: #91a2bc; }
+.field input:focus, .field textarea:focus { border-color: #38bdf8; background: rgba(255,255,255,0.08); box-shadow: 0 0 0 3px rgba(56,189,248,0.14); }
+.field input[aria-invalid="true"], .field textarea[aria-invalid="true"] { border-color: #fb7185; }
+.field textarea { resize: vertical; min-height: 108px; }
+.error { font-size: 12px; color: #fda4af; }
+.serverError { font-size: 13px; color: #fda4af; text-align: center; margin: 0; }
+.submit {
+  background: linear-gradient(135deg, #3b82f6, #06b6d4);
+  color: #fff;
+  border: none;
+  border-radius: 10px;
+  padding: 13px 24px;
+  font-size: 15px;
+  font-weight: 600;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  transition: transform 0.2s, box-shadow 0.2s, opacity 0.2s;
+  box-shadow: 0 8px 24px rgba(37,99,235,0.24);
+}
+.submit:hover:not(:disabled) { transform: translateY(-1px); box-shadow: 0 12px 28px rgba(37,99,235,0.32); }
+.submit:disabled { opacity: 0.7; cursor: not-allowed; }
+.spin { animation: spin 1s linear infinite; }
+@keyframes spin { to { transform: rotate(360deg); } }
+.success { text-align: center; padding: 28px 20px; display: flex; flex-direction: column; align-items: center; gap: 12px; }
+.success h3 { font-size: 22px; color: #f1f5f9; margin: 0; }
+.success p { color: #94a3b8; margin: 0; }

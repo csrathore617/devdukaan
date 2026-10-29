@@ -1,0 +1,28 @@
+.btn {
+  position: fixed; bottom: max(22px, env(safe-area-inset-bottom)); right: max(20px, env(safe-area-inset-right)); z-index: 90;
+  width: 58px; height: 58px; border-radius: 50%;
+  background: #25d366; color: #fff;
+  display: flex; align-items: center; justify-content: center;
+  box-shadow: 0 5px 22px rgba(37,211,102,0.4), 0 0 0 5px rgba(37,211,102,0.1);
+  text-decoration: none; transition: transform 0.2s, box-shadow 0.2s, opacity 0.2s;
+}
+.btn:hover { transform: translateY(-2px) scale(1.04); box-shadow: 0 9px 28px rgba(37,211,102,0.48), 0 0 0 6px rgba(37,211,102,0.12); }
+.logo { display: block; width: 33px; height: 33px; }
+.tooltip {
+  position: absolute; right: calc(100% + 12px); top: 50%;
+  padding: 9px 12px; border-radius: 8px;
+  background: #102044; color: #fff; font-size: 12px; font-weight: 600;
+  white-space: nowrap; box-shadow: 0 5px 20px rgba(0,0,0,0.2);
+  opacity: 0; visibility: hidden; transform: translate(4px, -50%);
+  transition: opacity 0.18s, transform 0.18s, visibility 0.18s;
+  pointer-events: none;
+}
+.btn:hover .tooltip, .btn:focus-visible .tooltip { opacity: 1; visibility: visible; transform: translate(0, -50%); }
+@media (max-width: 480px) {
+  .btn { width: 52px; height: 52px; right: max(16px, env(safe-area-inset-right)); }
+  .logo { width: 30px; height: 30px; }
+  .tooltip { display: none; }
+}
+@media (prefers-reduced-motion: reduce) {
+  .btn, .tooltip { transition: none; }
+}

@@ -1,32 +1,23 @@
-# React + TypeScript + Vite
+# DevDukaan.in
 
-This template provides a minimal setup to get React working in Vite with HMR and some Oxlint rules.
+DevDukaan.in is a responsive agency website built with React and Vite. Its enquiry forms share client-side validation and submit through a Netlify Function to a configured Telegram chat.
 
-Currently, two official plugins are available:
+## Local development
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
-
-## React Compiler
-
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
-
-## Expanding the Oxlint configuration
-
-If you are developing a production application, we recommend enabling type-aware lint rules by installing `oxlint-tsgolint` and editing `.oxlintrc.json`:
-
-```json
-{
-  "$schema": "./node_modules/oxlint/configuration_schema.json",
-  "plugins": ["react", "typescript", "oxc"],
-  "options": {
-    "typeAware": true
-  },
-  "rules": {
-    "react/rules-of-hooks": "error",
-    "react/only-export-components": ["warn", { "allowConstantExport": true }]
-  }
-}
+```sh
+npm install
+npm run dev
 ```
 
-See the [Oxlint rules documentation](https://oxc.rs/docs/guide/usage/linter/rules) for the full list of rules and categories.
+To exercise the enquiry function locally, install the Netlify CLI and run `netlify dev`. The function reads `TELEGRAM_BOT_TOKEN` and `TELEGRAM_CHAT_ID` from the server environment. Configure these values in the local Netlify environment or deployment dashboard; never add real credentials to frontend variables or commit them.
+
+The production form endpoint is `/.netlify/functions/enquiry`. `VITE_ENQUIRY_ENDPOINT` may be set to override it when using a compatible serverless deployment.
+
+## Checks
+
+```sh
+npm run lint
+npm run build
+```
+
+The first-visit enquiry popup is delayed by five seconds and records its shown state in browser `localStorage`. Scroll-triggered reveals and decorative motion respect the user's reduced-motion preference.

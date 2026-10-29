@@ -1,0 +1,27 @@
+.section { background: #fff; padding: clamp(64px, 7vw, 88px) 24px; }
+.inner { max-width: 1280px; margin: 0 auto; }
+.sectionHead { text-align: center; margin-bottom: 48px; }
+.badge {
+  display: inline-block; font-size: 11px; font-weight: 700; letter-spacing: 2px;
+  color: #246bdd; background: #e8f1ff; border: 1px solid #d5e4fb;
+  border-radius: 20px; padding: 5px 14px; margin-bottom: 14px;
+}
+.sectionHead h2 { font-size: clamp(30px, 4vw, 42px); font-weight: 800; color: #122443; margin: 0 0 12px; letter-spacing: -1px; }
+.sectionHead p { font-size: 16px; color: #65748a; max-width: 540px; line-height: 1.7; margin: 0 auto; }
+.grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(200px, 1fr)); gap: 16px; }
+.card {
+  display: flex; align-items: center; gap: 14px;
+  background: #f8faff; border: 1px solid #e4ecf7;
+  border-radius: 13px; padding: 17px;
+  transition: border-color 0.2s, transform 0.2s;
+}
+.card:hover { border-color: #bad2f4; transform: translateY(-2px); }
+.logo {
+  width: 44px; height: 44px; border-radius: 10px; flex-shrink: 0;
+  background: linear-gradient(135deg, #3b82f6, #06b6d4);
+  color: #fff; font-size: 18px; font-weight: 800;
+  display: flex; align-items: center; justify-content: center;
+}
+.info { display: flex; flex-direction: column; gap: 3px; }
+.name { font-size: 14px; font-weight: 650; color: #19304f; }
+.cat { font-size: 11px; color: #718198; }
