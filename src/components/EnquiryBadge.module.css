@@ -1,0 +1,45 @@
+.badge {
+  position: fixed;
+  top: 50%;
+  left: 0;
+  z-index: 95;
+  width: 44px;
+  min-height: 132px;
+  padding: 14px 10px;
+  border: 0;
+  border-radius: 12px 0 0 12px;
+  background: #3A91CC;
+  color: #fff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 13px;
+  font-weight: 800;
+  letter-spacing: 0.12em;
+  line-height: 1;
+  writing-mode: vertical-rl;
+  transform: translateY(-50%) rotate(180deg);
+  cursor: pointer;
+  box-shadow: 0 8px 24px rgba(3, 10, 26, 0.24);
+  transition: background 0.2s, transform 0.2s, box-shadow 0.2s;
+}
+
+.badge:hover {
+  background: #102044;
+  transform: translateY(-50%) translateX(-2px) rotate(180deg);
+  box-shadow: 0 10px 28px rgba(3, 10, 26, 0.32);
+}
+
+@media (max-width: 480px) {
+  .badge {
+    width: 38px;
+    min-height: 112px;
+    padding: 12px 8px;
+    border-radius: 10px 0 0 10px;
+    font-size: 11px;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .badge { transition: none; }
+}

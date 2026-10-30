@@ -45,8 +45,7 @@ export default function PortfolioSection() {
             </button>
           ))}
         </div>
-        {visibleProjects.length > 0 ? (
-          <div className={styles.grid} data-reveal="stagger" aria-live="polite">
+        <div className={styles.grid} data-reveal="stagger" aria-live="polite">
           {visibleProjects.map((p, index) => (
             <article key={p.id} className={styles.card} style={{ '--reveal-index': index }}>
               <div className={styles.thumb} style={{ '--project-color': categoryColors[p.category] || '#3b82f6' }}>
@@ -83,8 +82,8 @@ export default function PortfolioSection() {
               </div>
             </article>
           ))}
-          </div>
-        ) : (
+        </div>
+        {visibleProjects.length === 0 && (
           <p className={styles.emptyState} role="status">No projects in this category are available yet.</p>
         )}
       </div>

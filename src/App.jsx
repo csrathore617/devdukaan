@@ -13,6 +13,7 @@ import ContactSection from './components/ContactSection';
 import Footer from './components/Footer';
 import EnquiryModal from './components/EnquiryModal';
 import EnquiryPopup from './components/EnquiryPopup';
+import EnquiryBadge from './components/EnquiryBadge';
 import FloatingWhatsAppButton from './components/FloatingWhatsAppButton';
 import PrivacyPolicy from './pages/PrivacyPolicy';
 import Terms from './pages/Terms';
@@ -95,6 +96,7 @@ export default function App() {
         <ContactSection />
       </main>
       <Footer />
+      <EnquiryBadge onClick={() => setModalOpen(true)} />
       <EnquiryModal isOpen={modalOpen} onClose={() => setModalOpen(false)} />
       <EnquiryPopup modalOpen={modalOpen} />
       <FloatingWhatsAppButton modalOpen={modalOpen} />
