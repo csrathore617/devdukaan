@@ -19,11 +19,20 @@ const variants = {
   whiteBlue: { colors: 'whiteBlue', angle: -1.8, speed: 36 },
 };
 
+const companionVariants = {
+  yellowGreen: 'orangeNavy',
+  orangeNavy: 'yellowGreen',
+  cyanBlue: 'purpleBlue',
+  purpleBlue: 'cyanBlue',
+  whiteBlue: 'purpleBlue',
+};
+
 export function AnimatedRibbon({
   variant = 'yellowGreen',
   labels = defaultLabels,
   reverse,
   children = 'DevDukaan website and software development capabilities',
+  layer = 'primary',
 }) {
   const settings = variants[variant] || variants.yellowGreen;
   const items = [...labels, ...labels];
@@ -31,7 +40,7 @@ export function AnimatedRibbon({
 
   return (
     <div
-      className={`${styles.ribbon} ${styles[settings.colors]} ${isReverse ? styles.reverse : ''}`}
+      className={`${styles.ribbon} ${styles[layer]} ${styles[settings.colors]} ${isReverse ? styles.reverse : ''}`}
       style={{ '--ribbon-angle': `${settings.angle}deg`, '--ribbon-speed': `${settings.speed}s` }}
     >
       <div className={styles.track} aria-hidden="true">
@@ -45,9 +54,19 @@ export function AnimatedRibbon({
 }
 
 export default function ServiceRibbons({ variant = 'yellowGreen', labels, children }) {
+  const companionVariant = companionVariants[variant] || 'orangeNavy';
+  const primarySettings = variants[variant] || variants.yellowGreen;
+
   return (
     <section className={styles.section} aria-label={children || 'DevDukaan capabilities'}>
-      <AnimatedRibbon variant={variant} labels={labels} children={children} />
+      <AnimatedRibbon variant={variant} labels={labels} children={children} layer="primary" />
+      <AnimatedRibbon
+        variant={companionVariant}
+        labels={labels}
+        reverse={!primarySettings.reverse}
+        children={`${children || 'DevDukaan capabilities'} supporting services`}
+        layer="companion"
+      />
     </section>
   );
 }
