@@ -1,6 +1,6 @@
 import styles from './ServiceRibbons.module.css';
 
-const labels = [
+const defaultLabels = [
   'SPEED OPTIMISATION',
   'SEO SETUP',
   'MOBILE-FIRST BUILD',
@@ -11,11 +11,30 @@ const labels = [
   'SOCIAL MEDIA INTEGRATION',
 ];
 
-function Ribbon({ reverse = false, children }) {
+const variants = {
+  yellowGreen: { colors: 'yellowGreen', angle: -2.4, speed: 30 },
+  orangeNavy: { colors: 'orangeNavy', angle: 2, speed: 34, reverse: true },
+  cyanBlue: { colors: 'cyanBlue', angle: -1.6, speed: 28 },
+  purpleBlue: { colors: 'purpleBlue', angle: 2.4, speed: 32, reverse: true },
+  whiteBlue: { colors: 'whiteBlue', angle: -1.8, speed: 36 },
+};
+
+export function AnimatedRibbon({
+  variant = 'yellowGreen',
+  labels = defaultLabels,
+  reverse,
+  children = 'DevDukaan website and software development capabilities',
+}) {
+  const settings = variants[variant] || variants.yellowGreen;
   const items = [...labels, ...labels];
+  const isReverse = reverse ?? settings.reverse;
+
   return (
-    <div className={`${styles.ribbon} ${reverse ? styles.reverse : ''}`}>
-      <div className={styles.track}>
+    <div
+      className={`${styles.ribbon} ${styles[settings.colors]} ${isReverse ? styles.reverse : ''}`}
+      style={{ '--ribbon-angle': `${settings.angle}deg`, '--ribbon-speed': `${settings.speed}s` }}
+    >
+      <div className={styles.track} aria-hidden="true">
         {items.map((label, index) => (
           <span key={`${label}-${index}`}>{label}<b aria-hidden="true">◆</b></span>
         ))}
@@ -25,11 +44,10 @@ function Ribbon({ reverse = false, children }) {
   );
 }
 
-export default function ServiceRibbons() {
+export default function ServiceRibbons({ variant = 'yellowGreen', labels, children }) {
   return (
-    <section className={styles.section} aria-label="DevDukaan capabilities">
-      <Ribbon>DevDukaan website and software development capabilities</Ribbon>
-      <Ribbon reverse>DevDukaan website and software development capabilities</Ribbon>
+    <section className={styles.section} aria-label={children || 'DevDukaan capabilities'}>
+      <AnimatedRibbon variant={variant} labels={labels} children={children} />
     </section>
   );
 }

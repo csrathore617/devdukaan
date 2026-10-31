@@ -1,4 +1,4 @@
-.section { background: #f2f7ff; padding: clamp(64px, 7vw, 88px) 24px; }
+.section { background: #f2f7ff; padding: clamp(48px, 6vw, 80px) 24px; }
 .inner { max-width: 1280px; margin: 0 auto; }
 .sectionHead { text-align: center; max-width: 760px; margin: 0 auto 32px; }
 .badge {
@@ -6,7 +6,7 @@
   color: #256bdd; background: #e7f0ff; border: 1px solid #d1e2fa;
   border-radius: 20px; padding: 5px 14px; margin-bottom: 14px;
 }
-.sectionHead h2 { font-size: clamp(30px, 4vw, 44px); font-weight: 800; color: #122443; margin: 0 0 12px; letter-spacing: -1px; }
+.sectionHead h2 { font-size: clamp(28px, 4vw, 44px); font-weight: 800; color: #102443; margin: 0 0 12px; letter-spacing: -1.2px; line-height: 1.1; }
 .sectionHead p { font-size: 15px; color: #65748a; max-width: 640px; line-height: 1.7; margin: 0 auto; }
 .highlight { background: linear-gradient(110deg, #2563eb, #06b6d4); -webkit-background-clip: text; background-clip: text; color: transparent; }
 .tabs { display: flex; gap: 8px; justify-content: center; flex-wrap: wrap; margin-bottom: 24px; }
@@ -18,24 +18,33 @@
 .tab:hover { border-color: #a9c8f4; color: #1b4e9d; }
 .tabActive { background: #e6f0ff; border-color: #9dc2f5; color: #1c68d7; box-shadow: 0 4px 12px rgba(37,99,235,0.08); }
 .tab:active { transform: translateY(1px); }
+.viewport { overflow: hidden; }
 .grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(112px, 1fr)); gap: 12px; }
+.duplicateSet { display: none; }
 .card {
   background: #fff; border: 1px solid #e2eaf5;
-  border-radius: 12px; padding: 14px 10px 13px;
+  border-radius: 14px; padding: 14px 10px 13px;
   display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 9px;
-  box-shadow: 0 6px 20px rgba(27,61,111,0.04);
+  box-shadow: 0 4px 16px rgba(27,61,111,0.04);
   min-height: 100px;
   transition: transform 0.22s, border-color 0.22s, box-shadow 0.22s;
 }
-.card:hover { transform: translateY(-4px); border-color: #bbd4f7; box-shadow: 0 12px 25px rgba(27,61,111,0.09); }
+.card:hover { transform: translateY(-4px); border-color: #bbd4f7; box-shadow: 0 12px 26px rgba(27,61,111,0.1); }
 .techIcon {
-  display: grid; place-items: center; width: 36px; height: 36px;
-  border-radius: 10px; background: color-mix(in srgb, var(--tech-color) 10%, white);
+  display: grid; place-items: center; width: 38px; height: 38px;
+  border-radius: 11px; background: color-mix(in srgb, var(--tech-color) 10%, white);
   color: var(--tech-color); font-size: 13px; font-weight: 800; letter-spacing: -0.5px;
   transition: transform 0.22s, background 0.22s;
 }
-.card:hover .techIcon { transform: scale(1.08); background: color-mix(in srgb, var(--tech-color) 16%, white); }
+.card:hover .techIcon { transform: scale(1.1); background: color-mix(in srgb, var(--tech-color) 18%, white); }
 .techName { font-size: 11px; font-weight: 650; color: #263d5e; text-align: center; line-height: 1.35; }
+@media (min-width: 1000px) {
+  .grid { display: flex; width: max-content; animation: technology-loop 30s linear infinite; }
+  .grid:hover, .grid:focus-within { animation-play-state: paused; }
+  .card { width: 140px; flex: 0 0 140px; }
+  .duplicateSet { display: flex; gap: 12px; }
+}
+@keyframes technology-loop { to { transform: translate3d(-50%, 0, 0); } }
 @media (max-width: 560px) {
   .section { padding-inline: 18px; }
   .sectionHead { margin-bottom: 26px; }
@@ -45,6 +54,5 @@
   .card { min-height: 94px; padding: 12px 6px; }
   .techName { font-size: 10px; }
 }
-@media (max-width: 360px) {
-  .grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
-}
+@media (max-width: 360px) { .grid { grid-template-columns: repeat(2, minmax(0, 1fr)); } }
+@media (prefers-reduced-motion: reduce) { .grid { animation: none; } }

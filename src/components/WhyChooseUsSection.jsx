@@ -4,6 +4,15 @@ import styles from './WhyChooseUsSection.module.css';
 
 const icons = { CheckCircle, HeartHandshake, Layers, Puzzle, Shield, Smartphone, Zap };
 
+const cardThemes = [
+  { gradient: 'linear-gradient(135deg, #1d4ed8, #06b6d4)', glow: '#22d3ee' },
+  { gradient: 'linear-gradient(135deg, #7c3aed, #2563eb)', glow: '#818cf8' },
+  { gradient: 'linear-gradient(135deg, #059669, #0f9f95)', glow: '#34d399' },
+  { gradient: 'linear-gradient(135deg, #f97316, #facc15)', glow: '#fbbf24' },
+  { gradient: 'linear-gradient(135deg, #ec4899, #7c3aed)', glow: '#f472b6' },
+  { gradient: 'linear-gradient(135deg, #06b6d4, #1e3a8a)', glow: '#38bdf8' },
+];
+
 export default function WhyChooseUsSection() {
   return (
     <section id="about" className={styles.section}>
@@ -20,9 +29,18 @@ export default function WhyChooseUsSection() {
         <div className={styles.grid} data-reveal="stagger">
           {whyUs.map((item, index) => {
             const Icon = icons[item.icon] || CheckCircle;
+            const theme = cardThemes[index];
             return (
-              <article key={item.title} className={styles.card} style={{ '--reveal-index': index }}>
-                <div className={styles.iconWrap}><Icon size={22} color="#3b82f6" /></div>
+              <article
+                key={item.title}
+                className={styles.card}
+                style={{
+                  '--reveal-index': index,
+                  '--card-gradient': theme.gradient,
+                  '--card-glow': theme.glow,
+                }}
+              >
+                <div className={styles.iconWrap} aria-hidden="true"><Icon size={22} /></div>
                 <div>
                   <h3>{item.title}</h3>
                   <p>{item.desc}</p>

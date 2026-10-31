@@ -11,9 +11,9 @@ export default function TechnologiesSection() {
     <section id="technologies" className={styles.section}>
       <div className={styles.inner}>
         <div className={styles.sectionHead} data-reveal>
-          <span className={styles.badge}>Our technology ecosystem</span>
-          <h2>Our Expertise &amp; <span className={styles.highlight}>Technology</span></h2>
-          <p>Explore common technology options for websites, applications, APIs and software. We recommend a stack to fit each project’s scope.</p>
+          <span className={styles.badge}>Certified &amp; Recognised</span>
+          <h2>Our Expertise &amp; <span className={styles.highlight}>Partnerships</span></h2>
+          <p>Explore the technology ecosystem we use across websites, applications, APIs and software. We recommend a stack to fit each project's scope.</p>
         </div>
         <div className={styles.tabs} role="group" aria-label="Technology categories">
           {categories.map(cat => (
@@ -27,13 +27,23 @@ export default function TechnologiesSection() {
             </button>
           ))}
         </div>
-        <div id="technology-grid" className={styles.grid} aria-live="polite" data-reveal="stagger">
-          {activeTechnologies.map((tech, index) => (
-            <div key={tech.name} className={styles.card} style={{ '--reveal-index': index, '--tech-color': tech.color }}>
-              <span className={styles.techIcon} aria-hidden="true">{tech.mark}</span>
-              <span className={styles.techName}>{tech.name}</span>
+        <div id="technology-grid" className={styles.viewport} aria-live="polite" data-reveal="stagger">
+          <div className={styles.grid}>
+            {activeTechnologies.map((tech, index) => (
+              <div key={tech.name} className={styles.card} style={{ '--reveal-index': index, '--tech-color': tech.color }}>
+                <span className={styles.techIcon} aria-hidden="true">{tech.mark}</span>
+                <span className={styles.techName}>{tech.name}</span>
+              </div>
+            ))}
+            <div className={styles.duplicateSet} aria-hidden="true">
+              {activeTechnologies.map(tech => (
+                <div key={`duplicate-${tech.name}`} className={styles.card} style={{ '--tech-color': tech.color }}>
+                  <span className={styles.techIcon}>{tech.mark}</span>
+                  <span className={styles.techName}>{tech.name}</span>
+                </div>
+              ))}
             </div>
-          ))}
+          </div>
         </div>
       </div>
     </section>

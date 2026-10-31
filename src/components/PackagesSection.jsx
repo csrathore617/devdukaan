@@ -30,7 +30,7 @@ export default function PackagesSection({ onQuote }) {
       <div className={styles.inner}>
         <div className={styles.sectionHead} data-reveal>
           <span className={styles.badge}>Packages</span>
-          <h2 id="packages-title">A Digital Solution for <span>Every Business</span></h2>
+          <h2 id="packages-title">Website Packages For <span>Every Business</span></h2>
           <p>Every project is scoped around your goals, requirements and functionality. Request a tailored estimate for the right package.</p>
         </div>
         <div className={styles.grid} data-reveal="stagger">
@@ -40,9 +40,13 @@ export default function PackagesSection({ onQuote }) {
               <h3>{item.name}</h3>
               <p>{item.description}</p>
               <ul>
-                {item.features.map(feature => <li key={feature}><Check size={15} />{feature}</li>)}
+                {item.features.map(feature => (
+                  <li key={feature}><Check size={14} />{feature}</li>
+                ))}
               </ul>
-              <button type="button" onClick={onQuote}>Discuss this package <ArrowRight size={15} /></button>
+              <button type="button" onClick={onQuote}>
+                Discuss this package <ArrowRight size={15} />
+              </button>
             </article>
           ))}
         </div>

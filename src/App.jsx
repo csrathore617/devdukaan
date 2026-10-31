@@ -101,13 +101,32 @@ export default function App() {
       <Header onQuote={() => setModalOpen(true)} />
       <main>
         <HeroSection onQuote={() => setModalOpen(true)} />
+        <ServiceRibbons
+          variant="yellowGreen"
+          labels={['WEBSITE DEVELOPMENT', 'MOBILE-FIRST DESIGN', 'RESPONSIVE DESIGN', 'FAST DELIVERY']}
+          >Website development and mobile-first design</ServiceRibbons>
         <ServicesSection onQuote={() => setModalOpen(true)} />
+        <ServiceRibbons
+          variant="orangeNavy"
+          labels={['CUSTOM WEB APPLICATIONS', 'AI-POWERED SOLUTIONS', 'SECURE DEVELOPMENT', 'DIGITAL GROWTH']}
+          >Custom web applications and secure development</ServiceRibbons>
         <FeaturesIncludedSection />
-        <ServiceRibbons />
+        <ServiceRibbons
+          variant="cyanBlue"
+          labels={['SEO READY', 'SPEED OPTIMIZATION', 'PREMIUM UI/UX', 'CREATIVE DESIGN']}
+          >SEO ready websites and premium user experience</ServiceRibbons>
         <PortfolioSection />
+        <ServiceRibbons
+          variant="purpleBlue"
+          labels={['E-COMMERCE SOLUTIONS', 'PERFORMANCE OPTIMIZATION', 'WEBSITE MAINTENANCE', 'CREATIVE DESIGN']}
+          >E-commerce solutions and performance optimization</ServiceRibbons>
         <WhyChooseUsSection />
         <TechnologiesSection />
         <PackagesSection onQuote={() => setModalOpen(true)} />
+        <ServiceRibbons
+          variant="whiteBlue"
+          labels={['PREMIUM UI/UX', 'FAST DELIVERY', 'SECURE DEVELOPMENT', 'DIGITAL GROWTH']}
+          >Premium design and reliable delivery</ServiceRibbons>
         <DevelopmentProcessSection />
         <ClientsSection />
         <TestimonialsSection onQuote={() => setModalOpen(true)} />
