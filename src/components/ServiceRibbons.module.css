@@ -1,0 +1,59 @@
+.section {
+  position: relative;
+  display: grid;
+  gap: 0;
+  padding: 22px 0;
+  overflow: hidden;
+  background: #f7faff;
+  isolation: isolate;
+}
+.ribbon {
+  width: 120%;
+  margin-left: -10%;
+  overflow: hidden;
+  transform: rotate(-2.2deg);
+  background: linear-gradient(100deg, #f97316, #fbbf24);
+  color: #17233c;
+  box-shadow: 0 10px 24px rgba(32, 54, 91, .12);
+}
+.ribbon + .ribbon {
+  margin-top: -6px;
+  transform: rotate(2.2deg);
+  background: linear-gradient(100deg, #2563eb, #4338ca);
+  color: #fff;
+}
+.track {
+  display: flex;
+  width: max-content;
+  animation: ribbon-left 32s linear infinite;
+}
+.reverse .track { animation-name: ribbon-right; }
+.track span {
+  display: inline-flex;
+  align-items: center;
+  gap: 26px;
+  min-height: 48px;
+  padding: 0 24px;
+  white-space: nowrap;
+  font-size: 11px;
+  font-weight: 850;
+  letter-spacing: 1.1px;
+}
+.track b { font-size: 8px; opacity: .7; }
+@keyframes ribbon-left { to { transform: translate3d(-50%, 0, 0); } }
+@keyframes ribbon-right { from { transform: translate3d(-50%, 0, 0); } to { transform: translate3d(0, 0, 0); } }
+.srOnly {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+}
+@media (max-width: 600px) {
+  .section { padding: 16px 0; }
+  .track span { min-height: 42px; padding-inline: 16px; font-size: 9px; gap: 18px; }
+}
+@media (prefers-reduced-motion: reduce) {
+  .track { animation: none; }
+}

@@ -28,8 +28,8 @@ export default function PortfolioSection() {
     <section id="portfolio" className={styles.section}>
       <div className={styles.inner}>
         <div className={styles.sectionHead} data-reveal>
-          <span className={styles.badge}>Our Work</span>
-          <h2>Websites &amp; Apps Built for Different Industries</h2>
+          <span className={styles.badge}>Real Results</span>
+          <h2>Outcomes That <span className={styles.highlight}>Speak Louder</span></h2>
           <p>Explore selected website projects. Mobile applications will appear here when project details are available.</p>
         </div>
         <div className={styles.filters} role="group" aria-label="Portfolio categories">

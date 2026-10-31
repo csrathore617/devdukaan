@@ -16,7 +16,7 @@ export default function ServicesSection({ onQuote }) {
       <div className={styles.inner}>
         <div className={styles.sectionHead} data-reveal>
           <span className={styles.badge}>What We Do</span>
-          <h2>Websites, Web Applications &amp; Mobile Apps</h2>
+          <h2>Check Out Our <span className={styles.highlight}>Stunning Services</span></h2>
           <p>From business websites and distinct mobile apps to custom software, design and ongoing support.</p>
         </div>
         <div className={styles.grid} data-reveal="stagger">

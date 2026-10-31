@@ -13,7 +13,6 @@ const benefits = [
 ];
 
 export default function HeroSection({ onQuote }) {
-  const scrollToPortfolio = () => scrollToSection('#portfolio');
   const scrollDown = () => scrollToSection('#services');
 
   return (
@@ -25,9 +24,9 @@ export default function HeroSection({ onQuote }) {
       </div>
       <div className={styles.inner}>
         <div className={styles.content} data-reveal>
-          <span className={styles.eyebrow}>WEB &amp; MOBILE APP DEVELOPMENT</span>
+          <span className={styles.eyebrow}>JAIPUR'S #1 WEBSITE COMPANY</span>
           <h1 className={styles.heading}>
-            Websites &amp; <span className={styles.highlight}>Mobile Apps</span> Built for Your Business
+            The Best <span className={styles.highlight}>Website Development</span> Company in Jaipur
           </h1>
           <p className={styles.desc}>
             We design and develop modern websites, powerful web applications and Android &amp; iOS mobile apps that help businesses connect with customers, streamline operations and grow digitally.
@@ -43,8 +42,8 @@ export default function HeroSection({ onQuote }) {
             <button className={styles.ctaPrimary} onClick={onQuote}>
               Get a Free Quote <ArrowRight size={16} />
             </button>
-            <button className={styles.ctaSecondary} onClick={scrollToPortfolio}>
-              Explore Our Work
+            <button className={styles.ctaSecondary} onClick={scrollDown}>
+              Explore Our Services
             </button>
           </div>
         </div>

@@ -15,6 +15,10 @@ import EnquiryModal from './components/EnquiryModal';
 import EnquiryPopup from './components/EnquiryPopup';
 import EnquiryBadge from './components/EnquiryBadge';
 import FloatingWhatsAppButton from './components/FloatingWhatsAppButton';
+import FeaturesIncludedSection from './components/FeaturesIncludedSection';
+import FloatingCallButton from './components/FloatingCallButton';
+import ServiceRibbons from './components/ServiceRibbons';
+import PackagesSection from './components/PackagesSection';
 import PrivacyPolicy from './pages/PrivacyPolicy';
 import Terms from './pages/Terms';
 
@@ -82,13 +86,28 @@ export default function App() {
 
   return (
     <>
+      <div className="announcement-bar" role="status">
+        <div className="announcement-viewport" aria-label="DevDukaan services">
+          <div className="announcement-track">
+            <span><i className="announcement-dot" aria-hidden="true" /> Thoughtful digital products for ambitious businesses</span>
+            <span>Websites <b aria-hidden="true">·</b> Web apps <b aria-hidden="true">·</b> Mobile apps</span>
+            <span>Responsive design <b aria-hidden="true">·</b> Reliable development</span>
+            <span aria-hidden="true"><i className="announcement-dot" /> Thoughtful digital products for ambitious businesses</span>
+            <span aria-hidden="true">Websites <b>·</b> Web apps <b>·</b> Mobile apps</span>
+            <span aria-hidden="true">Responsive design <b>·</b> Reliable development</span>
+          </div>
+        </div>
+      </div>
       <Header onQuote={() => setModalOpen(true)} />
       <main>
         <HeroSection onQuote={() => setModalOpen(true)} />
         <ServicesSection onQuote={() => setModalOpen(true)} />
+        <FeaturesIncludedSection />
+        <ServiceRibbons />
         <PortfolioSection />
         <WhyChooseUsSection />
         <TechnologiesSection />
+        <PackagesSection onQuote={() => setModalOpen(true)} />
         <DevelopmentProcessSection />
         <ClientsSection />
         <TestimonialsSection onQuote={() => setModalOpen(true)} />
@@ -99,6 +118,7 @@ export default function App() {
       <EnquiryBadge onClick={() => setModalOpen(true)} />
       <EnquiryModal isOpen={modalOpen} onClose={() => setModalOpen(false)} />
       <EnquiryPopup modalOpen={modalOpen} />
+      <FloatingCallButton modalOpen={modalOpen} />
       <FloatingWhatsAppButton modalOpen={modalOpen} />
     </>
   );

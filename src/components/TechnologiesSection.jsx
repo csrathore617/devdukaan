@@ -11,8 +11,8 @@ export default function TechnologiesSection() {
     <section id="technologies" className={styles.section}>
       <div className={styles.inner}>
         <div className={styles.sectionHead} data-reveal>
-          <span className={styles.badge}>Tech Stack</span>
-          <h2>Technologies We Work With</h2>
+          <span className={styles.badge}>Our technology ecosystem</span>
+          <h2>Our Expertise &amp; <span className={styles.highlight}>Technology</span></h2>
           <p>Explore common technology options for websites, applications, APIs and software. We recommend a stack to fit each project’s scope.</p>
         </div>
         <div className={styles.tabs} role="group" aria-label="Technology categories">

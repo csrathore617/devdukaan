@@ -1,0 +1,41 @@
+.button {
+  position: fixed; left: max(20px, env(safe-area-inset-left)); bottom: max(30px, env(safe-area-inset-bottom));
+  z-index: 90; display: flex; align-items: center; justify-content: center; gap: 7px;
+  width: 58px; height: 58px; border-radius: 50%; color: #fff; text-decoration: none;
+  background: linear-gradient(145deg, #2877f5, #5749e8);
+  box-shadow: 0 7px 24px rgba(40,119,245,.38), 0 0 0 5px rgba(40,119,245,.11);
+  transition: transform .2s, box-shadow .2s;
+  animation: call-float 5s ease-in-out infinite, call-pulse 3.4s ease-in-out infinite;
+}
+.button::before, .button::after {
+  content: ''; position: absolute; inset: -5px; border: 1px solid rgba(93, 196, 255, .55);
+  border-radius: inherit; pointer-events: none; animation: call-ripple 3.4s ease-out infinite;
+}
+.button::after { animation-delay: 1.7s; }
+@keyframes call-ripple {
+  0% { opacity: .7; transform: scale(.92); }
+  70%, 100% { opacity: 0; transform: scale(1.38); }
+}
+@keyframes call-float {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-4px); }
+}
+@keyframes call-pulse {
+  0%, 70%, 100% { box-shadow: 0 7px 24px rgba(40,119,245,.38), 0 0 0 5px rgba(40,119,245,.11); }
+  35% { box-shadow: 0 10px 28px rgba(40,119,245,.48), 0 0 0 10px rgba(40,119,245,0); }
+}
+.button:hover, .button:focus-visible { animation-play-state: paused; transform: translateY(-3px) scale(1.04); box-shadow: 0 12px 30px rgba(40,119,245,.48), 0 0 0 7px rgba(40,119,245,.12); }
+.button:hover::before, .button:hover::after, .button:focus-visible::before, .button:focus-visible::after { animation-play-state: paused; }
+.iconWrap { display: grid; place-items: center; position: relative; z-index: 1; }
+.icon { animation: phone-ring 2.8s ease-in-out infinite; transform-origin: 50% 65%; }
+@keyframes phone-ring {
+  0%, 12%, 24%, 100% { transform: rotate(0deg); }
+  6% { transform: rotate(-13deg); }
+  18% { transform: rotate(13deg); }
+}
+.label { position: absolute; left: calc(100% + 10px); padding: 8px 10px; border-radius: 7px; background: #102044; color: #fff; font-size: 11px; font-weight: 700; opacity: 0; pointer-events: none; transition: opacity .2s; white-space: nowrap; }
+.button:hover .label, .button:focus-visible .label { opacity: 1; }
+@media (max-width: 480px) { .button { left: max(16px, env(safe-area-inset-left)); bottom: max(24px, env(safe-area-inset-bottom)); width: 52px; height: 52px; } .label { display: none; } }
+@media (prefers-reduced-motion: reduce) {
+  .button, .label, .button::before, .button::after, .icon { transition: none; animation: none; }
+}

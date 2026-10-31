@@ -8,6 +8,7 @@
 }
 .sectionHead h2 { font-size: clamp(30px, 4vw, 44px); font-weight: 800; color: #f5f8ff; margin: 0 0 12px; letter-spacing: -1px; }
 .sectionHead p { font-size: 16px; color: #a7b6cd; max-width: 560px; line-height: 1.7; margin: 0 auto; }
+.highlight { background: linear-gradient(110deg, #6ea8ff, #37d3f1); -webkit-background-clip: text; background-clip: text; color: transparent; }
 .filters { display: flex; gap: 8px; justify-content: center; flex-wrap: wrap; margin-bottom: 24px; }
 .filter { background: #101f3d; border: 1px solid rgba(161,187,226,0.16); color: #b1bfd4; border-radius: 9px; padding: 9px 13px; font-size: 12px; font-weight: 600; cursor: pointer; transition: border-color 0.2s, color 0.2s, background 0.2s, transform 0.2s; }
 .filter:hover { border-color: rgba(102,164,255,0.5); color: #f1f5f9; }

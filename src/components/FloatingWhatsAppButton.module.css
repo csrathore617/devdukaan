@@ -1,13 +1,37 @@
 .btn {
-  position: fixed; bottom: max(22px, env(safe-area-inset-bottom)); right: max(20px, env(safe-area-inset-right)); z-index: 90;
+  position: fixed; bottom: max(30px, env(safe-area-inset-bottom)); right: max(20px, env(safe-area-inset-right)); z-index: 90;
   width: 58px; height: 58px; border-radius: 50%;
   background: #25d366; color: #fff;
   display: flex; align-items: center; justify-content: center;
   box-shadow: 0 5px 22px rgba(37,211,102,0.4), 0 0 0 5px rgba(37,211,102,0.1);
   text-decoration: none; transition: transform 0.2s, box-shadow 0.2s, opacity 0.2s;
+  animation: whatsapp-float 5.5s ease-in-out infinite, whatsapp-pulse 3s ease-in-out infinite;
 }
-.btn:hover { transform: translateY(-2px) scale(1.04); box-shadow: 0 9px 28px rgba(37,211,102,0.48), 0 0 0 6px rgba(37,211,102,0.12); }
-.logo { display: block; width: 33px; height: 33px; }
+.btn::before, .btn::after {
+  content: ''; position: absolute; inset: -5px; border: 1px solid rgba(91, 241, 150, .62);
+  border-radius: inherit; pointer-events: none; animation: whatsapp-ripple 3s ease-out infinite;
+}
+.btn::after { animation-delay: 1.5s; }
+@keyframes whatsapp-float {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-4px); }
+}
+@keyframes whatsapp-pulse {
+  0%, 70%, 100% { box-shadow: 0 5px 22px rgba(37,211,102,0.4), 0 0 0 5px rgba(37,211,102,0.1); }
+  35% { box-shadow: 0 8px 26px rgba(37,211,102,0.46), 0 0 0 10px rgba(37,211,102,0); }
+}
+@keyframes whatsapp-ripple {
+  0% { opacity: .7; transform: scale(.92); }
+  70%, 100% { opacity: 0; transform: scale(1.38); }
+}
+.btn:hover, .btn:focus-visible { animation-play-state: paused; transform: translateY(-2px) scale(1.04); box-shadow: 0 9px 28px rgba(37,211,102,0.48), 0 0 0 6px rgba(37,211,102,0.12); }
+.btn:hover::before, .btn:hover::after, .btn:focus-visible::before, .btn:focus-visible::after { animation-play-state: paused; }
+.iconWrap { display: grid; place-items: center; position: relative; z-index: 1; }
+.logo { display: block; width: 33px; height: 33px; animation: whatsapp-bounce 3.2s ease-in-out infinite; }
+@keyframes whatsapp-bounce {
+  0%, 14%, 100% { transform: translateY(0) rotate(0); }
+  7% { transform: translateY(-3px) rotate(-5deg); }
+}
 .tooltip {
   position: absolute; right: calc(100% + 12px); top: 50%;
   padding: 9px 12px; border-radius: 8px;
@@ -19,10 +43,10 @@
 }
 .btn:hover .tooltip, .btn:focus-visible .tooltip { opacity: 1; visibility: visible; transform: translate(0, -50%); }
 @media (max-width: 480px) {
-  .btn { width: 52px; height: 52px; right: max(16px, env(safe-area-inset-right)); }
+  .btn { width: 52px; height: 52px; right: max(16px, env(safe-area-inset-right)); bottom: max(24px, env(safe-area-inset-bottom)); }
   .logo { width: 30px; height: 30px; }
   .tooltip { display: none; }
 }
 @media (prefers-reduced-motion: reduce) {
-  .btn, .tooltip { transition: none; }
+  .btn, .tooltip, .btn::before, .btn::after, .logo { transition: none; animation: none; }
 }

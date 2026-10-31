@@ -8,6 +8,7 @@
 }
 .sectionHead h2 { font-size: clamp(30px, 4vw, 44px); font-weight: 800; color: #122443; margin: 0 0 12px; letter-spacing: -1px; }
 .sectionHead p { font-size: 15px; color: #65748a; max-width: 640px; line-height: 1.7; margin: 0 auto; }
+.highlight { background: linear-gradient(110deg, #2563eb, #06b6d4); -webkit-background-clip: text; background-clip: text; color: transparent; }
 .tabs { display: flex; gap: 8px; justify-content: center; flex-wrap: wrap; margin-bottom: 24px; }
 .tab {
   background: #fff; border: 1px solid #dfe8f4;

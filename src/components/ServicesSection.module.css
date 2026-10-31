@@ -1,4 +1,4 @@
-.section { background: #f2f7ff; padding: clamp(68px, 8vw, 104px) 24px; }
+.section { background: #f2f7ff; padding: clamp(68px, 8vw, 104px) 24px; padding-bottom: clamp(24px, 3vw, 40px); }
 .inner { max-width: 1280px; margin: 0 auto; }
 .sectionHead { text-align: center; margin: 0 auto 48px; max-width: 760px; }
 .badge {
@@ -8,6 +8,7 @@
 }
 .sectionHead h2 { font-size: clamp(30px, 4vw, 44px); font-weight: 800; color: #102443; margin: 0 0 13px; letter-spacing: -1.2px; }
 .sectionHead p { font-size: 16px; color: #64748b; max-width: 560px; line-height: 1.7; margin: 0 auto; }
+.highlight { background: linear-gradient(110deg, #2563eb, #06b6d4); -webkit-background-clip: text; background-clip: text; color: transparent; }
 .grid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(min(100%, 240px), 1fr));
